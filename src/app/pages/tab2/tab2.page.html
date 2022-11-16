@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Testing MapBox
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-fab #mapMenu slot="fixed" vertical="bottom" horizontal="start">
+    <ion-fab-button size="small" color="dark">
+      <ion-icon name="map-sharp"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="top">
+
+        <ion-button *ngFor="let option of mapOptions" shape="round" size="small" color="dark" (click)="setMapStyle(option.value)">
+          {{ option.name }}
+        </ion-button>
+              
+      </ion-fab-list>
+
+  </ion-fab>
+
+  <div id='map'></div>
+    
+</ion-content>

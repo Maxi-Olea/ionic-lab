@@ -9,4 +9,14 @@ export class Tab1Page {
 
   constructor() {}
 
+  takePicture() {
+    console.log('Clicked on take a picture!');
+    
+  }
+
+  pickPicture() {
+    console.log('Clicked on pick a picture!');
+    
+  }
+
 }

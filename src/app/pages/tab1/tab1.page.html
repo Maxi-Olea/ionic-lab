@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Testing the camera
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+ <div class="container">
+   <ion-buttons class="ion-margin">
+     <ion-button (click)="takePicture()" expand="" fill="outline" shape="round" color="primary" size="large">
+       <ion-icon slot="start" size="large" name="camera-outline"></ion-icon>Take a picture!</ion-button>
+   </ion-buttons>
+   <ion-buttons class="ion-margin">
+     <ion-button (click)="pickPicture()" expand="" fill="outline" shape="round" color="primary" size="large">
+       <ion-icon slot="start" size="large" name="image-outline"></ion-icon>Pick a picture!</ion-button>
+   </ion-buttons>
+
+ </div>  
+ 
+</ion-content>

@@ -24,3 +24,24 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.mapboxgl-popup {
+    max-width: 10px;
+    }
+    .mapboxgl-popup-content {
+        color: var(--ion-color-primary);
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+
+        h3 {
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 13px;
+        }
+        .mapboxgl-popup-close-button {
+            display: none;
+        }
+    }
