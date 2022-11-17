@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { CameraSource } from '@capacitor/camera';
+import { ModalController } from '@ionic/angular';
+import { CameraService } from 'src/app/services/camera.service';
+import { PhotoModalComponent } from 'src/app/shared/modals/photo-modal/photo-modal.component';
+
 
 @Component({
   selector: 'app-tab1',
@@ -7,16 +12,40 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  images: any = [];
+  isModalOpen = false;
 
-  takePicture() {
-    console.log('Clicked on take a picture!');
+  constructor(
+    private camera: CameraService,
+    private modalCtrl: ModalController
+  ) {}
+
+
+  getPicture(source: string) {
+    this.camera.getPicture(source as CameraSource).subscribe({
+      next: (photo) => {
+        console.log('info de la foto: ', photo);      
+        let imgUrl = photo.webPath;
+        console.log('imgurl: ', imgUrl);
+        
+        this.images.push(imgUrl)  
+      },
+      error: _ => { console.log('Ocurrió un error'); }      
+    })
     
   }
 
-  pickPicture() {
-    console.log('Clicked on pick a picture!');
-    
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+
+  async openModal(img: string) {
+    const modal = await this.modalCtrl.create({
+      component: PhotoModalComponent,
+      componentProps: { img }
+    });
+    modal.present();
+
   }
 
 }
