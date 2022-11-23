@@ -9,11 +9,11 @@ const routes: Routes = [
     children: [
       {
         path: 'camera',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        loadChildren: () => import('../camera/camera.module').then(m => m.CameraPageModule)
       },
       {
         path: 'map',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('../map/map.module').then(m => m.MapPageModule)
       },
       {
         path: '',

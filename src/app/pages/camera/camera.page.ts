@@ -6,11 +6,11 @@ import { PhotoModalComponent } from 'src/app/shared/modals/photo-modal/photo-mod
 
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-camera',
+  templateUrl: 'camera.page.html',
+  styleUrls: ['camera.page.scss']
 })
-export class Tab1Page {
+export class CameraPage {
 
   images: any = [];
   isModalOpen = false;

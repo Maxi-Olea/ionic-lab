@@ -1,5 +1,4 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { map } from 'rxjs';
 import { Coordinates, Geo } from 'src/app/interfaces/geolocation.interface';
 import { GeolocationService } from 'src/app/services/geolocation.service';
 import { environment } from 'src/environments/environment';
@@ -7,11 +6,11 @@ import { environment } from 'src/environments/environment';
 declare let mapboxgl: any;
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-map',
+  templateUrl: 'map.page.html',
+  styleUrls: ['map.page.scss']
 })
-export class Tab2Page implements OnInit {
+export class MapPage implements OnInit {
 
   map: any;
   coordinates: Coordinates | null = null;
