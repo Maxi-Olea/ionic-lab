@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -6,15 +6,13 @@ import { ModalController } from '@ionic/angular';
   templateUrl: './photo-modal.component.html',
   styleUrls: ['./photo-modal.component.scss'],
 })
-export class PhotoModalComponent implements OnInit {
+export class PhotoModalComponent {
 
   constructor(
     private modalCtrl: ModalController
   ) { }
 
   img!: string;
-
-  ngOnInit() {}
 
   cancel() {
     return this.modalCtrl.dismiss(null, 'cancel');
